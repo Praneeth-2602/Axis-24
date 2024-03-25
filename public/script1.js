@@ -22,6 +22,8 @@ navbarItems.forEach((item, index) => {
     });
 });
 
+slideDivs[5].style.display = 'block'
+
 $('[data-tilt]').tilt({
     maxTilt: 10, // Adjust max tilt angle as needed
     perspective: 1000, // Adjust perspective as needed
