@@ -244,8 +244,8 @@ body{
     font-weight: 100;
     border: 1px solid #a418ba;
     position: relative;
-    top: 2100px;
-}
+    top: 1655px;
+  }
 
 #highlights a{
   font-size: 5rem;
@@ -498,13 +498,24 @@ h2 {
 }
 
 .card-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: all 0.5s ease;
+}
+
+.card-btn:hover {
+transform: scale(1.1);
+}
+
+.card-btn a{
+color: #fff;
+text-decoration: none;
 }
 
 #card1 .card-title{
@@ -703,9 +714,14 @@ nav{
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: var(--grad12);
   color: #000;
   height: 20px;
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.66);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(15.2px);
+-webkit-backdrop-filter: blur(15.2px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 nav a{
@@ -723,7 +739,7 @@ nav ul{
 }
 
 nav ul li{
-  margin-right: 20px;
+  margin-right: 80px;
 }
 
 nav ul li a{
