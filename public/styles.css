@@ -6,7 +6,7 @@
   --color4: #0472df;
   --grad2: linear-gradient(to left, var(--color3), var(--color4));
   --color5: #f6d901;
-  --color6: #f7991e;
+  --color6: #ff4000;
   --grad3: linear-gradient(to left, var(--color5), var(--color6));
   --color7: #52c5eb;
   --color8: #2f80ec;
@@ -32,13 +32,12 @@
   --color21: #2fb3c4;
   --color22: #5b86e5;
   --grad11: linear-gradient(to left, var(--color21), var(--color22));
+  --color24: #293133;
   --color23: #ecf1f2;
-  --color24: #ecf1f2;
   --grad12: linear-gradient(to left, var(--color23), var(--color24));
 }
 
 body{
-    height: 1000vh;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -46,29 +45,30 @@ body{
     transition: all 0.5s ease;
 }
 
-#about,#events {
+#about,#highlights {
     margin-top: 25px;
     padding: 20px;
     color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
-    left: 20vh;
-    max-width: 100vh;
+    left: 200px;
+    max-width: 1000px;
 }
 
 #hero{
-  height: 100vh;
+  height: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: url('./assets/Blue\ Pink\ Gradient\ Fashion\ Banner.mp4');
+
 }
 
 .video-container {
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 1000px;
   z-index: -1;
   display: flex;
   justify-content: center;
@@ -87,8 +87,111 @@ body{
 
 .video-container img{
   position: relative;
-  top: 20vh;
-  animation: up 5s infinite;
+  top: 150px;
+  animation: updown 15s ease infinite;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-70px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.vertical-line, .vertical-line1, .vertical-line2, .vertical-line3, .vertical-line4{
+  height: 6158.910px;
+  width: 100px;
+  position: absolute;
+  left: 90px;
+  border-radius: 10px 0 0 0;
+}
+
+.vertical-line::before, .vertical-line1::before, .vertical-line2::before, .vertical-line3::before, .vertical-line4::before{
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: 5px;
+  height: 100%;
+  width: 4px;
+}
+
+.vertical-line::before{
+  background: linear-gradient(to top, var(--color11), var(--color12), var(--color11));
+  background-size: 400% 400%;
+  animation: animate 1s ease infinite;
+}
+
+.vertical-line1::before{
+  background: linear-gradient(to top, var(--color15), var(--color16), var(--color15));
+  background-size: 400% 400%;
+  animation: animate 1s ease infinite;
+}
+
+.vertical-line2::before{
+  background: linear-gradient(to top, var(--color10), var(--color9), var(--color10));
+  background-size: 400% 400%;
+  animation: animate 1s ease infinite;
+}
+
+.vertical-line3::before{
+  background: linear-gradient(to top, var(--color11), var(--color12), var(--color11));
+  background-size: 400% 400%;
+  animation: animate 1s ease infinite;
+}
+
+.vertical-line4::before{
+  background: linear-gradient(to top, var(--color15), var(--color16), var(--color15));
+  background-size: 400% 400%;
+  animation: animate 1s ease infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+  
+}
+
+.vertical-line{
+  top: 950px;
+  height: 4130px;
+  border-top: 4px solid var(--color11);
+}
+
+.vertical-line1{
+  height: 4130px;
+  top: 2050px;
+  border-top: 4px solid var(--color15);
+}
+
+.vertical-line2{
+  top: 5850px;
+  height: 780px;
+  border-top: 4px solid var(--color10);
+}
+
+.vertical-line3{
+  top: 6630px;
+  height: 525px;
+  border-top: 4px solid var(--color11);
+}
+
+.vertical-line4{
+  top: 7155px;
+  height: 325px;
+  border-top: 4px solid var(--color15);
 }
 
 #about h1{
@@ -115,21 +218,21 @@ body{
     font-weight: 100;
 }
 
-#events h1{
+#highlights h1{
     font-size: 4rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-#events p:nth-child(3) {
+#highlights p:nth-child(3) {
     font-size: 1.2rem;
     line-height: 1.5;
     font-weight: lighter;
     max-width: 50%;
-    margin-bottom: 7vh;
+    margin-bottom: 70px;
 }
 
-#events h3{
+#highlights h3{
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 10px;
@@ -141,26 +244,32 @@ body{
     font-weight: 100;
     border: 1px solid #a418ba;
     position: relative;
-    top: 210vh;
+    top: 2100px;
 }
 
-#events a{
+#highlights a{
   font-size: 5rem;
   font-weight: bold;
   color: #a418ba;
   text-decoration: none;
   position: relative;
-  top: 210vh;
+  top: 1700px;
 }
 
-#events svg{
+#highlights .card-btn a{
+  font-size: 1rem;
+  color: #fff;
+  top: 0;
+}
+
+#highlights svg{
   font-size: 5rem;
   color: #a418ba;
   position: relative;
-  top: 2vh;
+  top: 20px;
 }
 
-#events svg:hover{
+#highlights svg:hover{
   animation: left 0.5s ease;
 }
 
@@ -183,7 +292,7 @@ body{
   }
   
   .card {
-    text-align: justify;
+    text-align: center;
   }
 
   #card1:hover {
@@ -305,7 +414,7 @@ h2 {
     font-size: 2rem;
     font-weight: bold;
     border: 1px solid #a418ba;
-    width: 25vh;
+    width: 250px;
     text-align: center;
     padding: 2px;
     border-radius: 60px;
@@ -314,7 +423,6 @@ h2 {
 
 .card {
     grid-column: span 2;
-    width: auto;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex; 
@@ -337,7 +445,7 @@ h2 {
 }
 
 .card-image img{
-  animation: up 5s infinite;
+  animation: up 10s infinite ease-in-out;
 }
 
 @keyframes up {
@@ -353,43 +461,40 @@ h2 {
 }
 
 .card-content {
-    margin-top: 20px;
-    width: 70%;
-}
-
-@keyframes textGradient {
-  0% {
-    background-position: 0% 50%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  50% {
-    background-position: 100% 50%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  100% {
-    background-position: 0% 50%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .card-title {
   font-size: 3rem;
   font-weight: bold;
-  background-size: 400% 400%;
-  animation: textGradient 10s infinite;
-  text-align:center;
+  animation: textGradient 5s ease infinite;
+  text-align: center;
 }
 
-.card-text {
-    margin-top: 10px;
-    margin-left: 3vh;
+@keyframes textGradient {
+  0% {
+    background-position: 0% 0%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  50% {
+    background-position: 50% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background-position: 0% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 #card3 .card-text{
-  margin-right: 3vh;
+  margin-right: 30px;
 }
 
 .card-btn {
@@ -404,30 +509,37 @@ h2 {
 
 #card1 .card-title{
   background: var(--grad1);
+  background-size: 400% 400%;
 }
 
 #card2 .card-title{
   background: var(--grad2);
+  background-size: 400% 400%;
 }
 
 #card3 .card-title{
   background: var(--grad3);
+  background-size: 400% 400%;
 }
 
 #card4 .card-title{
   background: var(--grad4);
+  background-size: 400% 400%;
 }
 
 #card5 .card-title{
   background: var(--grad5);
+  background-size: 400% 400%;
 }
 
 #card6 .card-title{
   background: var(--grad6);
+  background-size: 400% 400%;
 }
 
 #card7 .card-title{
   background: var(--grad7);
+  background-size: 400% 400%;
 }
 
 #card1 .card-content, #card7 .card-content{
@@ -436,22 +548,22 @@ h2 {
 
 #card6 img{
   position: relative;
-  bottom: 5vh;
+  bottom: 50px;
 }
 
 #card7 img{
   position: relative;
-  top: 5vh;
+  top: 50px;
   right: 0;
-  left: 15vh;
+  left: 150px;
 }
 
 #workshops{
-  height: 100vh;
+  height: 1000px;
   background: url('./assets/Blue\ Pink\ Gradient\ Fashion\ Banner.mp4');
   position: relative;
-  top: 220vh;
-  left: 20vh;
+  top: 1700px;
+  left: 200px;
   color: #fff;
   width: 1000px;
 }
@@ -466,12 +578,12 @@ h2 {
   display: grid;
   grid-template-columns: 450px 450px;
   grid-template-rows: 500px;
-  grid-gap: 10vh;
+  grid-gap: 100px;
   justify-content: center;
   position: relative;
   width: 1000px;
   left: 0;
-  top: 5vh;
+  top: 50px;
 }
 
 .wcard{
@@ -491,7 +603,7 @@ h2 {
 
 .wcard-image {
   border-radius: 5px;
-  width: 450px;
+  width: 20%;
   height: 550px;
   background-size: cover;
   background-position: center;
@@ -512,7 +624,7 @@ h2 {
   font-size: 2rem;
   font-weight: bold;
   background-size: 400% 400%;
-  animation: textGradient 10s infinite;
+  animation: textGradient 1s ease infinite;
   text-align:center;
 }
 
@@ -532,4 +644,128 @@ h2 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#query{
+  height: 500px;
+  width: 750px;
+  position: relative;
+  top: 1450px;
+  left: 200px;
+}
+
+form {
+  /* Your form styles here */
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  color: #fff;
+}
+
+.form-group {
+  /* Your form group styles here */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+label {
+  /* Your label styles here */
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  /* Your input styles here */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-color: #000;
+}
+
+button[type="submit"] {
+  /* Your button styles here */
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: var(--grad12);
+  color: #000;
+  height: 20px;
+}
+
+nav a{
+  color: #000;
+  text-decoration: none;
+}
+
+nav a:hover{
+  color: #007bff;
+} 
+
+nav ul{
+  display: flex;
+  list-style: none;
+}
+
+nav ul li{
+  margin-right: 20px;
+}
+
+nav ul li a{
+  color: #000;
+  text-decoration: none;
+}
+
+nav ul li a:hover{
+  color: #007bff;
+}
+
+#contact {
+  height: 340px;
+  width: 500px;
+  margin-top: 20px;
+  position: relative;
+  top: 1450px;
+  left: 200px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 500px1;
+}
+
+.contact-card {
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.contact-card h1 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.contact-card p {
+  margin: 0;
+}
+
+.contact-card a {
+  text-decoration: none;
+  color: #fff;
 }
